@@ -52,5 +52,9 @@ static func create_duke_theme() -> Theme:
 	panel_sb.set_corner_radius_all(16)
 	panel_sb.set_content_margin_all(20)
 	t.set_stylebox("panel", "PanelContainer", panel_sb)
-
+	if ResourceLoader.exists("res://data/NotoSansSymbols2-Regular.ttf"):
+		var sym_font = load("res://data/NotoSansSymbols2-Regular.ttf")
+		var base_font = ThemeDB.fallback_font.duplicate()
+		base_font.fallbacks = [sym_font]
+		t.default_font = base_font
 	return t

@@ -22,6 +22,9 @@ const SAVE_PATH = "user://duke_legacy_save.cfg"
 
 func _ready() -> void:
 	load_game()
+	pounds = 5000
+	gold_bars = 20
+
 
 func add_pounds(amount: int) -> void:
 	pounds += amount
